@@ -1,0 +1,112 @@
+/* Game Board */
+.game-container {
+  position: relative;
+  width: 800px;
+  height: 900px;
+  background-image: url("D:\Shape Shifter Duel\Assessts\backg.jpeg");
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  border-radius: 15px;
+  border: 3px solid black;
+  margin: 20px auto;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Player Styles */
+.player {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 4px black;
+  transition: transform 0.3s ease-in-out, left 0.3s ease-out, top 0.3s ease-out;
+}
+
+/* Shapes */
+.circle {
+  background: red;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate ease-in-out;
+}
+
+.square {
+  background: blue;
+  animation: pulse 1s infinite alternate ease-in-out;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid green;
+  animation: spin 1s infinite linear;
+}
+
+/* Animations */
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Controls */
+.controls {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.controls button {
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.controls button:hover {
+  transform: scale(1.1);
+}
+
+.controls button:nth-child(1) {
+  background: red;
+  color: white;
+}
+
+.controls button:nth-child(2) {
+  background: blue;
+  color: white;
+}
+
+.controls button:nth-child(3) {
+  background: green;
+  color: white;
+}
